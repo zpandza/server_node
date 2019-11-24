@@ -14,7 +14,10 @@ const port = 3000
 app.all('/', (req, res) => {
     res.status(200).json({ message: 'Please try adding company, department, employee or timecard as sufix to your url' });
 })
+//MIDDLEWARE FOR USING JSON
+app.use(express.json());
 
+//MIDDLEWARE FOR USING FORMS
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 
