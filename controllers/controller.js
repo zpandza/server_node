@@ -1,6 +1,7 @@
 const companydata = require("companydata/index");
 const Department = companydata.Department;
 const Employee = companydata.Employee;
+const Timecard = companydata.Timecard;
 
 const Cases = require("./validation_usecase");
 const validation = new Cases();
@@ -151,6 +152,44 @@ class Controller {
         }
         return JSON.parse(output);
     };
+
+    getTimecard = timecard_id => {
+        let output = validation.validateGetTimecard(timecard_id);
+        if (output == null) {
+            let timecard = companydata.getTimecard(timecard_id);
+            if (timecard != null) {
+                return timecard;
+            }
+            return JSON.parse(
+                `{ "Error":"Timecard with provided ID doesn't exist" }`
+            );
+        }
+        return JSON.parse(output);
+    };
+
+    getTimecards = emp_id => {
+        let output = validation.validateGetTimecards(emp_id);
+        if (output == null) {
+            let timecards = companydata.getAllTimecard(emp_id);
+            if (timecards.length > 0) {
+                return timecards;
+            }
+            return JSON.parse(
+                `{ "Error":"There are no timecards for this employee." }`
+            );
+        }
+        return JSON.parse(output);
+    };
+
+    createTimecard = timecard => {
+        let output = validation.validatePostTimecard(timecard);
+        if(output == null){
+            let newTimecard = new Timecard(timecard.start_time, timecard.end_time, timecard.emp_id);
+            newTimecard = companydata.insertTimecard(newTimecard);
+            return newTimecard;
+        }
+        return JSON.parse(output);
+    }
 }
 
 module.exports = Controller;

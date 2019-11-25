@@ -62,7 +62,7 @@ class Cases {
         if (!validation.isEmpty(companyname)) {
             return null;
         } else {
-            return `{ "Error":"You need to provide something as companyname" }`;
+            return `{ "Error":"You need to provide companyname" }`;
         }
     };
 
@@ -112,9 +112,9 @@ class Cases {
     };
 
     validatePutEmployee = employee => {
-        if(validation.employeeExists(COMPANY_NAME, employee.emp_id)){
+        if (validation.employeeExists(COMPANY_NAME, employee.emp_id)) {
             let output = this.validatePostEmployee(employee);
-            if(output == null){
+            if (output == null) {
                 return null;
             } else {
                 return output;
@@ -131,6 +131,38 @@ class Cases {
             return `{ "Error":"Employee with provided employee_id doesn't exist" }`;
         }
     };
+
+    validateGetTimecard = timecard_id => {
+        if (!validation.isEmpty(timecard_id)) {
+            return null;
+        } else {
+            return `{ "Error":"You need to provide timecard_id" }`;
+        }
+    };
+
+    validateGetTimecards = emp_id => {
+        if (!validation.isEmpty(emp_id)) {
+            if (validation.employeeExists(COMPANY_NAME, emp_id)) {
+                return null;
+            } else {
+                return `{ "Error":"Employee with provided employee_id doesn't exist" }`;
+            }
+        } else {
+            return `{ "Error":"You need to provide employee id." }`;
+        }
+    };
+
+    validatePostTimecard = (timecard) => {
+        if(validation.employeeExists(COMPANY_NAME, timecard.emp_id)){
+            if(validation.validateStartDate(timecard.start_time)){
+                return null;
+            } else {
+                return `{ "Error":"Start time needs to be in past 7 days from today's date." }`;
+            }
+        } else {
+            return `{ "Error":"Employee with provided employee_id doesn't exist" }`;
+        }
+    }
 }
 
 module.exports = Cases;

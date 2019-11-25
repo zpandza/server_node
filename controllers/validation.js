@@ -108,6 +108,22 @@ class Validation {
         });
         return flag;
     }
+
+    validateStartDate(start_time){
+        let start_time_date = new Date(start_time);
+        let tempDate = new Date();
+        tempDate.setDate(tempDate.getDate() - 7);
+        console.log(start_time_date.getUTCDate())
+        if(start_time_date.getTime() > tempDate.getTime()){
+            return true;
+        }
+        return false;
+    }
+
+    prepareTimecardDate(date){
+        let arr = date.split(" ");
+        return arr[0];
+    }
 }
 
 module.exports = Validation;
