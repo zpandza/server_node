@@ -112,15 +112,15 @@ class Cases {
     };
 
     validatePutEmployee = employee => {
-        let output = this.validatePostEmployee(employee);
-        if (output == null) {
-            if (validation.employeeExists(COMPANY_NAME, employee.emp_id)) {
+        if(validation.employeeExists(COMPANY_NAME, employee.emp_id)){
+            let output = this.validatePostEmployee(employee);
+            if(output == null){
                 return null;
             } else {
-                return `{ "Error":"Employee with provided employee_id doesn't exist" }`;
+                return output;
             }
         } else {
-            return output;
+            return `{ "Error":"Employee with provided employee_id doesn't exist" }`;
         }
     };
 
