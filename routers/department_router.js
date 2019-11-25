@@ -37,7 +37,7 @@ routes.delete("/", (req, res) => {
         req.query.dept_id
     );
     res.status(200).json({
-        message: `Department with ID ${num_rows} is deleted!`
+        message: num_rows
     });
 });
 

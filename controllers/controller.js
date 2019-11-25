@@ -15,8 +15,12 @@ class Controller {
 
     //UPDATE DEPARTMENT
     updateDepartment = department => {
-        let updatedDept = companydata.updateDepartment(department);
-        return updatedDept;
+        let output = validation.validatePutDepartment(department);
+        if (output == null) {
+            let updatedDept = companydata.updateDepartment(department);
+            return updatedDept;
+        }
+        return JSON.parse(output);
     };
 
     //CREATE A DEPARTMENT
@@ -38,19 +42,47 @@ class Controller {
 
     //DELETE DEPARTMENT
     deleteDepartment = (companyname, id) => {
-        return companydata.deleteDepartment(companyname, id);
+        let output = validation.validateDeleteDepartment(companyname, id);
+        if (output == null) {
+            numRows = companydata.deleteDepartment(companyname, id);
+            if (numRows > 0) {
+                return JSON.parse(`{"Success":"${numRows} rows deleted!"}`);
+            }
+            return JSON.parse(
+                `{"Error":"Department you searched for doesn't exist!"}`
+            );
+        }
+        return JSON.parse(output);
     };
 
     //GET SINGLE DEPARTMENT
     getDepartment = (company, dept_id) => {
-        let department = companydata.getDepartment(company, dept_id);
-        return department;
+        let output = validation.validateGetDepartment(company, dept_id);
+        if (output == null) {
+            let department = companydata.getDepartment(company, dept_id);
+            if (department != null) {
+                return department;
+            }
+            return JSON.parse(
+                `{ "Error":"Department you searched for doesn't exist!" }`
+            );
+        }
+        return JSON.parse(output);
     };
 
     //GET ALL DEPARTMENTS
     getDepartments = companyname => {
-        let departments = companydata.getAllDepartment(companyname);
-        return departments;
+        let output = validation.validateGetDepartments(companyname);
+        if (output == null) {
+            let departments = companydata.getAllDepartment(companyname);
+            if (!departments.length < 1) {
+                return departments;
+            }
+            return JSON.parse(
+                `{ "Error":"There are no departments in that company" }`
+            );
+        }
+        return JSON.parse(output);
     };
 
     //GET ALL EMPLOYEES
@@ -58,7 +90,12 @@ class Controller {
         let output = validation.validateGetEmployees(companyname);
         if (output == null) {
             let employees = companydata.getAllEmployee(companyname);
-            return employees;
+            if (employees.length > 0) {
+                return employees;
+            }
+            return JSON.parse(
+                `{ "Error":"There are no Employees in that company" }`
+            );
         }
         return JSON.parse(output);
     };
@@ -68,7 +105,11 @@ class Controller {
         let output = validation.validateGetEmployee(emp_id);
         if (output == null) {
             let employee = companydata.getEmployee(emp_id);
-            return employee;
+            if (employee != null) return employee;
+
+            return JSON.parse(
+                `{ "Error":"Employee with provided ID doesn't exist" }`
+            );
         }
         return JSON.parse(output);
     };
@@ -93,23 +134,23 @@ class Controller {
     };
 
     //UPDATE EMPLOYEE
-    updateEmployee = (employee) => {
+    updateEmployee = employee => {
         let output = validation.validatePutEmployee(employee);
-        if(output == null){
+        if (output == null) {
             let updatedEmp = companydata.updateEmployee(employee);
             return updatedEmp;
-        } 
+        }
         return JSON.parse(output);
-    }
+    };
     //DELETE EMPLOYEE
-    deleteEmployee = (emp_id) => {
+    deleteEmployee = emp_id => {
         let output = validation.validateDeleteEmployee(emp_id);
-        if(output == null){
+        if (output == null) {
             let updatedEmp = companydata.deleteEmployee(emp_id);
             return updatedEmp;
-        } 
+        }
         return JSON.parse(output);
-    }
+    };
 }
 
 module.exports = Controller;

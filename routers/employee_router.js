@@ -35,7 +35,7 @@ routes.put('/', (req, res) => {
 routes.delete('/', (req, res) => {
   let result = controller.deleteEmployee(req.query.emp_id)
   res.status(200).json({
-    message: `${result} rows deleted!`
+    message: result
   })
 })
 

@@ -95,6 +95,19 @@ class Validation {
         });
         return flag;
     }
+
+    isValidDepartmentNumber(company, dept_id, dept_no){
+        let flag = false;
+        let allDepartments = companydata.getAllDepartment(company);
+        allDepartments.forEach(department => {
+            if (dept_id == department.dept_id) {
+                if(dept_no == department.dept_no){
+                    flag = true;
+                }
+            }
+        });
+        return flag;
+    }
 }
 
 module.exports = Validation;
