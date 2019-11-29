@@ -45,6 +45,7 @@ class Validation {
         let arr = hire_date.split('-');
         let hireDate = new Date(parseInt(arr[0]), parseInt(arr[1]) - 1, parseInt(arr[2]));
         if(hireDate.getDay() != 0 && hireDate.getDay() != 7){
+            console.log(hireDate.getDay())
             return true;
         }
         return false;
@@ -113,9 +114,11 @@ class Validation {
     validateStartDate(start_time){
         let start_time_date = new Date(start_time);
         let tempDate = new Date();
-        tempDate.setDate(tempDate.getDate() - 7);
-        console.log(start_time_date.getUTCDate())
-        if(start_time_date.getTime() > tempDate.getTime()){
+        tempDate.setDate(tempDate.getDate());
+        let date_difference = tempDate.getTime() - start_time_date.getTime();
+        let dayToMillis = 86400000;
+        date_difference = date_difference / dayToMillis;
+        if(date_difference >= 0 && date_difference < 7){
             return true;
         }
         return false;
@@ -168,6 +171,24 @@ class Validation {
             return true;
         }
         return false;
+    }
+
+    isUpdatePossible(timecard){
+        let flag = true;
+
+        if(timecard != null){
+            let temp_timecard = companydata.getTimecard(timecard.timecard_id);
+            let tempEmp_id = temp_timecard.emp_id;
+            let allTimecards = companydata.getAllTimecard(tempEmp_id);
+            allTimecards.forEach(tc => {
+                if (this.prepareTimecardDate(timecard.start_time) == this.prepareTimecardDate(tc.start_time)) {
+                    if(timecard.timecard_id != tc.timecard_id){
+                        flag = false;
+                    }
+                }
+            });
+        }
+        return flag;
     }
 }
 

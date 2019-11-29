@@ -161,18 +161,31 @@ class Cases {
                         timecard.end_time
                     )
                 ) {
-                    if (validation.isDayWeekday(validation.prepareTimecardDate(timecard.start_time)) && 
-                        validation.isDayWeekday(validation.prepareTimecardDate(timecard.end_time))) {
-                            if(validation.isWorkingHours(timecard.start_time) &&
-                                validation.isWorkingHours(timecard.end_time)){
-                                    if(validation.isStartPossible(timecard.start_time, timecard.emp_id)){
-                                        return null;
-                                    } else {
-                                        return `{ "Error":"There is already one timecard for selected start_time." }`;
-                                    }
+                    if (
+                        validation.isDayWeekday(
+                            validation.prepareTimecardDate(timecard.start_time)
+                        ) &&
+                        validation.isDayWeekday(
+                            validation.prepareTimecardDate(timecard.end_time)
+                        )
+                    ) {
+                        if (
+                            validation.isWorkingHours(timecard.start_time) &&
+                            validation.isWorkingHours(timecard.end_time)
+                        ) {
+                            if (
+                                validation.isStartPossible(
+                                    timecard.start_time,
+                                    timecard.emp_id
+                                )
+                            ) {
+                                return null;
                             } else {
-                                return `{ "Error":"Start time and End time need to be inside working hours. (06:00 - 18:00)" }`;
+                                return `{ "Error":"There is already one timecard for selected start_time." }`;
                             }
+                        } else {
+                            return `{ "Error":"Start time and End time need to be inside working hours. (06:00 - 18:00)" }`;
+                        }
                     } else {
                         return `{ "Error":"End time and Start time need to be weekdays." }`;
                     }
@@ -187,14 +200,48 @@ class Cases {
         }
     };
 
-    validatePutTimecard = (timecard) => {
-        if(validation.timecardExists(timecard.timecard_id)){
-            //TODO
-            return null;
+    validatePutTimecard = timecard => {
+        if (validation.timecardExists(timecard.timecard_id)) {
+            if (validation.validateStartDate(timecard.start_time)) {
+                if (
+                    validation.validateEndDate(
+                        timecard.start_time,
+                        timecard.end_time
+                    )
+                ) {
+                    if (
+                        validation.isDayWeekday(
+                            validation.prepareTimecardDate(timecard.start_time)
+                        ) &&
+                        validation.isDayWeekday(
+                            validation.prepareTimecardDate(timecard.end_time)
+                        )
+                    ) {
+                        if (
+                            validation.isWorkingHours(timecard.start_time) &&
+                            validation.isWorkingHours(timecard.end_time)
+                        ) {
+                            if(validation.isUpdatePossible(timecard)){
+                            return null;
+                            } else {
+                                return `{ "Error":"There is already one timecard for selected start_time." }`;
+                            }
+                        } else {
+                            return `{ "Error":"Start time and End time need to be inside working hours. (06:00 - 18:00)" }`;
+                        }
+                    } else {
+                        return `{ "Error":"End time and Start time need to be weekdays." }`;
+                    }
+                } else {
+                    return `{ "Error":"End time needs to be later than start time, but in the same day." }`;
+                }
+            } else {
+                return `{ "Error":"Start time needs to be in past 7 days from today's date." }`;
+            }
         } else {
             return `{ "Error":"Timecard with provided timecard_id doesn't exist" }`;
         }
-    }
+    };
 }
 
 module.exports = Cases;
