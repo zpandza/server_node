@@ -41,6 +41,7 @@ class Validation {
     }
 
     isDayWeekday(hire_date){
+        console.log(typeof hire_date);
         let arr = hire_date.split('-');
         let hireDate = new Date(parseInt(arr[0]), parseInt(arr[1]) - 1, parseInt(arr[2]));
         if(hireDate.getDay() != 0 && hireDate.getDay() != 7){
@@ -120,9 +121,53 @@ class Validation {
         return false;
     }
 
+    validateEndDate(start_time, end_time){
+        let start_date = new Date(start_time);
+        let end_date = new Date(end_time);
+        if(start_date.getFullYear() == end_date.getFullYear()){
+            if(start_date.getMonth() == end_date.getMonth()){
+                if(start_date.getDate() == end_date.getDate()){
+                    let hourToMilliseconds = 3600000;
+                    if(end_date.getTime() - start_date.getTime() >= hourToMilliseconds){
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    isWorkingHours(time){
+        let date = new Date(time);
+        if(date.getHours() >= 6 && date.getHours() < 18){
+            return true;
+        }
+        return false;
+    }
+
     prepareTimecardDate(date){
         let arr = date.split(" ");
-        return arr[0];
+        return arr[0] + "";
+    }
+
+    isStartPossible(start_time, emp_id){
+        let flag = true;
+        let allTimecards = companydata.getAllTimecard(emp_id);
+        allTimecards.forEach(timecard => {
+            if (this.prepareTimecardDate(start_time) == this.prepareTimecardDate(timecard.start_time)) {
+                flag = false;
+            }
+        });
+        return flag;
+    }
+
+    timecardExists(timecard_id){
+        let timecard = companydata.getTimecard(timecard_id);
+        if(timecard != null){
+            return true;
+        }
+        return false;
     }
 }
 

@@ -20,7 +20,8 @@ routes.post('/', (req, res) => {
 });
 
 routes.put('/', (req, res) => {
-  res.status(200).json({ message: controller.getMessage() });
+  let result = controller.updateTimecard(req.body);
+  res.status(200).json({ message: result });
 });
 
 routes.delete('/', (req, res) => {

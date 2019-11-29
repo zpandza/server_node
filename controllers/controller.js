@@ -190,6 +190,16 @@ class Controller {
         }
         return JSON.parse(output);
     }
+
+    updateTimecard = (timecard) => {
+        let output = validation.validatePutTimecard(timecard);
+        if(output == null){
+            let updatedTimecard = companydata.updateTimecard(timecard);
+            return updatedTimecard;
+        }
+        return JSON.parse(output);
+
+    }
 }
 
 module.exports = Controller;
