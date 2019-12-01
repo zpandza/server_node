@@ -12,9 +12,9 @@ const timecardRouter = require("./routers/timecard_router");
 const port = 3000;
 
 app.all("/", (req, res) => {
-    res.status(200).json({
-        message:
-            "Please try adding company, department, employee or timecard as sufix to your url"
+    res.status(404).json({
+        Error:
+            "Please provide valid url adding /PandzaZP3/CompanyServices/"
     });
 });
 //MIDDLEWARE FOR USING JSON

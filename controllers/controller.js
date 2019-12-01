@@ -161,6 +161,7 @@ class Controller {
         return JSON.parse(output);
     };
 
+    //GET SINGLE TIMECARD
     getTimecard = timecard_id => {
         let output = validation.validateGetTimecard(timecard_id);
         if (output == null) {
@@ -175,6 +176,7 @@ class Controller {
         return JSON.parse(output);
     };
 
+    //GET ALL TIMECARDS
     getTimecards = emp_id => {
         let output = validation.validateGetTimecards(emp_id);
         if (output == null) {
@@ -189,6 +191,7 @@ class Controller {
         return JSON.parse(output);
     };
 
+    //CREATE NEW TIMECARD
     createTimecard = timecard => {
         let output = validation.validatePostTimecard(timecard);
         if(output == null){
@@ -199,6 +202,7 @@ class Controller {
         return JSON.parse(output);
     }
 
+    //UPDATE TIMECARD
     updateTimecard = (timecard) => {
         let output = validation.validatePutTimecard(timecard);
         if(output == null){
@@ -209,6 +213,7 @@ class Controller {
 
     }
 
+    //DELETE TIMECARD
     deleteTimecard = (timecard_id) => {
         let output = validation.validateDeleteTimecard(timecard_id);
         if(output == null){

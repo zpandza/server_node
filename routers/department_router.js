@@ -4,6 +4,13 @@ const Controller = require("../controllers/controller");
 
 const controller = new Controller();
 
+routes.all("/", (req, res) => {
+    res.status(404).json({
+        Error:
+            "You need to add company, department(s), employee(s) or timecard(s) to path"
+    });
+});
+
 //GET SINGLE DEPARTMENT
 routes.get("/department", (req, res) => {
     let result = controller.getDepartment(req.query.company, req.query.dept_id);

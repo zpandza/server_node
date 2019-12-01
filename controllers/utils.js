@@ -3,6 +3,7 @@ const COMPANY_NAME = 'zxp6097';
 
 class Utilities {
 
+    //Deleting all companies
     companyDeleted(company, deleteDepartment){
         let allDepartments = companydata.getAllDepartment();
         for(let department of allDepartments){
@@ -10,6 +11,7 @@ class Utilities {
         }
     }
 
+    //Deleting all departments
     departmentDeleted(companyname, id, deleteEmployee){
         let allEmployees = companydata.getAllEmployee(companyname);
         for(let emp of allEmployees){
@@ -19,6 +21,7 @@ class Utilities {
         }
     }
 
+    //Setting mng_id to 0 for all employees whose manager was deleted.
     managerDeleted(emp_id){
         let allEmployees = companydata.getAllEmployee(COMPANY_NAME);
         for(let emp of allEmployees){
@@ -30,6 +33,7 @@ class Utilities {
         }
     }
 
+    //delete all timecards for one employee
     deleteTimecards(emp_id){
         let allTimecards = companydata.getAllTimecard(emp_id)
         for(let timecard of allTimecards){

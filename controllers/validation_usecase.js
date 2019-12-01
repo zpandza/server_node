@@ -5,6 +5,7 @@ const COMPANY_NAME = "zxp6097";
 
 class Cases {
 
+    //ALL NEEDED VALIDATION FOR DELETING COMPANY
     validateDeleteCompany = (company) => {
         if (!validation.isEmpty(company)) {
             return null;
@@ -13,6 +14,7 @@ class Cases {
         }
     }
 
+    //ALL NEEDED VALIDATION FOR GETTING ONE DEPARTMENT
     validateGetDepartment = (company, dept_id) => {
         if (!validation.isEmpty(company) && !validation.isEmpty(dept_id)) {
             return null;
@@ -20,7 +22,7 @@ class Cases {
             return `{ "Error":"Please provide name of company and DepartmentID" }`;
         }
     };
-
+    //ALL NEEDED VALIDATION FOR GETTING ALL DEPARTMENTS
     validateGetDepartments = company => {
         if (!validation.isEmpty(company)) {
             return null;
@@ -28,7 +30,8 @@ class Cases {
             return `{ "Error":"Please provide name of company" }`;
         }
     };
-    validatePostDepartment = department => {
+        //ALL NEEDED VALIDATION FOR POST DEPARTMENT
+        validatePostDepartment = department => {
         if (validation.isDepartmentUnique(department) == true) {
             return department;
         } else {
@@ -36,6 +39,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR UPDATING DEPARTMENT     
     validatePutDepartment = department => {
         if (validation.departmentExists(COMPANY_NAME, department.dept_id)) {
             if (
@@ -55,6 +59,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR DELETING DEPARTMENT
     validateDeleteDepartment = (company, dept_id) => {
         if (!validation.isEmpty(company) && !validation.isEmpty(dept_id)) {
             if (validation.departmentExists(company, dept_id)) {
@@ -67,6 +72,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR GETTING ALL EMPLOYEES
     validateGetEmployees = companyname => {
         if (!validation.isEmpty(companyname)) {
             return null;
@@ -75,6 +81,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR GETTING SINGLE EMPLOYEE
     validateGetEmployee = emp_id => {
         if (!validation.isEmpty(emp_id)) {
             return null;
@@ -83,6 +90,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR POST EMPLOYEE
     validatePostEmployee = employee => {
         if (validation.departmentExists(COMPANY_NAME, employee.dept_id)) {
             if (
@@ -120,6 +128,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR UPDATE EMPLOYEE
     validatePutEmployee = employee => {
         if (validation.employeeExists(COMPANY_NAME, employee.emp_id)) {
             let output = this.validatePostEmployee(employee);
@@ -133,6 +142,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR DELETE EMPLOYEE
     validateDeleteEmployee = emp_id => {
         if (validation.employeeExists(COMPANY_NAME, emp_id)) {
             return null;
@@ -141,7 +151,7 @@ class Cases {
         }
     };
 
-
+    //ALL NEEDED VALIDATION FOR GETTING SINGLE TIMECARD
     validateGetTimecard = timecard_id => {
         if (!validation.isEmpty(timecard_id)) {
             return null;
@@ -150,6 +160,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR GETTING ALL TIMECARDS
     validateGetTimecards = emp_id => {
         if (!validation.isEmpty(emp_id)) {
             if (validation.employeeExists(COMPANY_NAME, emp_id)) {
@@ -162,6 +173,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR POST TIMECARD
     validatePostTimecard = timecard => {
         if (validation.employeeExists(COMPANY_NAME, timecard.emp_id)) {
             if (validation.validateStartDate(timecard.start_time)) {
@@ -210,6 +222,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR PUT TIMECARD
     validatePutTimecard = timecard => {
         if (validation.timecardExists(timecard.timecard_id)) {
             if (validation.validateStartDate(timecard.start_time)) {
@@ -253,6 +266,7 @@ class Cases {
         }
     };
 
+    //ALL NEEDED VALIDATION FOR DELETE TIMECARD
     validateDeleteTimecard = (timecard_id) => {
         if(!validation.isEmpty(timecard_id)){
             if(validation.timecardExists(timecard_id)){
