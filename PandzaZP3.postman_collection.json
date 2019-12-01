@@ -1,0 +1,2292 @@
+{
+	"info": {
+		"_postman_id": "834e4b8c-7d59-4e97-a622-26c668d46267",
+		"name": "PandzaZP3",
+		"description": "REST-api requests for third project from Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DELETE - Company - SUCCESS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/company?company=zxp6097",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"company"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Company - ERROR 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/company?company=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"company"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Department - SUCCESS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department/?company=zxp6097&dept_id=920",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department",
+						""
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						},
+						{
+							"key": "dept_id",
+							"value": "920"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Department - ERROR 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department/?company=zxp6097&dept_id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department",
+						""
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						},
+						{
+							"key": "dept_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Department - ERROR 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department/?company=zxp6097&dept_id=51954",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department",
+						""
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						},
+						{
+							"key": "dept_id",
+							"value": "51954"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Departments - SUCCESS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/departments?company=zxp6097",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"departments"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Departments - ERROR 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/departments?company=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"departments"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Departments - ERROR 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/departments?company=asdasdaad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"departments"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "asdasdaad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Department - SUCCESS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company",
+							"value": "zxp6097",
+							"type": "text"
+						},
+						{
+							"key": "dept_name",
+							"value": "test-dept12345",
+							"type": "text"
+						},
+						{
+							"key": "dept_no",
+							"value": "zxp6097-d2",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "zadar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Department - ERROR 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "company",
+							"value": "zxp6097",
+							"type": "text"
+						},
+						{
+							"key": "dept_name",
+							"value": "rit",
+							"type": "text"
+						},
+						{
+							"key": "dept_no",
+							"value": "d5",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "zagreb",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Department - SUCCESS",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"company\":\"zxp6097\",\r\n   \"dept_id\":920,\r\n   \"dept_name\":\"ITCFlkjj\",\r\n   \"dept_no\":\"d2-zxp6097\",\r\n   \"location\":\"zadar\"\r\n}  \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Department - ERROR 1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"company\":\"zxp6097\",\r\n   \"dept_id\":919,\r\n   \"dept_name\":\"ITCF\",\r\n   \"dept_no\":\"d5\",\r\n   \"location\":\"mostar\"\r\n}  \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Department - ERROR 2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"company\":\"zxp6097\",\r\n   \"dept_id\":91212313,\r\n   \"dept_name\":\"ITCFKL\",\r\n   \"dept_no\":\"d112-zxp6097\",\r\n   \"location\":\"mostar\"\r\n}  \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Department - SUCCESS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department?company=zxp6097&dept_id=519",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						},
+						{
+							"key": "dept_id",
+							"value": "519"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Department - ERROR 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department?company=zxp6097&dept_id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						},
+						{
+							"key": "dept_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Department - ERROR 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/department?company=zxp6097&dept_id=9112313",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"department"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						},
+						{
+							"key": "dept_id",
+							"value": "9112313"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employees - SUCCESS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employees?company=zxp6097",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "zxp6097"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employees - ERROR 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employees?company=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employees - ERROR 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employees?company=asdsadad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "asdsadad"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employee - SUCCESS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee?emp_id=483",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "483"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employee - ERROR 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee?emp_id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Employee - ERROR 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee?emp_id=3513213123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "3513213123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee - SUCCESS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_name",
+							"value": "testfordelete",
+							"type": "text"
+						},
+						{
+							"key": "emp_no",
+							"value": "zxp6097-t5",
+							"type": "text"
+						},
+						{
+							"key": "hire_date",
+							"value": "2018-06-15",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "programercina1",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "10000.0",
+							"type": "text"
+						},
+						{
+							"key": "dept_id",
+							"value": "1105",
+							"type": "text"
+						},
+						{
+							"key": "mng_id",
+							"value": "1119",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee - ERROR 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "emp_no",
+							"value": "rituserid-e1bcdef",
+							"type": "text"
+						},
+						{
+							"key": "hire_date",
+							"value": "2018-06-15",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "programercina1",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "10000.0",
+							"type": "text"
+						},
+						{
+							"key": "dept_id",
+							"value": "919123",
+							"type": "text"
+						},
+						{
+							"key": "mng_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee - ERROR 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "emp_no",
+							"value": "rituserid-e1bcdef",
+							"type": "text"
+						},
+						{
+							"key": "hire_date",
+							"value": "2018-06-15",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "programercina1",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "10000.0",
+							"type": "text"
+						},
+						{
+							"key": "dept_id",
+							"value": "919",
+							"type": "text"
+						},
+						{
+							"key": "mng_id",
+							"value": "12313",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee - ERROR 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "emp_no",
+							"value": "rituserid-e1bcdef",
+							"type": "text"
+						},
+						{
+							"key": "hire_date",
+							"value": "2020-06-15",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "programercina1",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "10000.0",
+							"type": "text"
+						},
+						{
+							"key": "dept_id",
+							"value": "919",
+							"type": "text"
+						},
+						{
+							"key": "mng_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee - ERROR 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "emp_no",
+							"value": "rituserid-e1bcdefg",
+							"type": "text"
+						},
+						{
+							"key": "hire_date",
+							"value": "2019-11-24",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "programercina1",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "10000.0",
+							"type": "text"
+						},
+						{
+							"key": "dept_id",
+							"value": "919",
+							"type": "text"
+						},
+						{
+							"key": "mng_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee - ERROR 5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_name",
+							"value": "test",
+							"type": "text"
+						},
+						{
+							"key": "emp_no",
+							"value": "rituserid-e1bcdef",
+							"type": "text"
+						},
+						{
+							"key": "hire_date",
+							"value": "2018-06-15",
+							"type": "text"
+						},
+						{
+							"key": "job",
+							"value": "programercina1",
+							"type": "text"
+						},
+						{
+							"key": "salary",
+							"value": "10000.0",
+							"type": "text"
+						},
+						{
+							"key": "dept_id",
+							"value": "919",
+							"type": "text"
+						},
+						{
+							"key": "mng_id",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - SUCCESS",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"emp_id\": 1090,\n    \"emp_name\": \"testfordelete\",\n    \"emp_no\": \"zxp6097-t2\",\n    \"hire_date\": \"2018-06-14\",\n    \"job\": \"programercina1\",\n    \"salary\": 10000,\n    \"dept_id\": 919,\n    \"mng_id\": 1104\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - ERROR 1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"emp_id\":848,\n\"emp_name\":\"Frenchies\",\n\"emp_no\":\"rituserid-e1b\",\n\"hire_date\":\"2018-06-15\",\n\"job\":\"programmers\",\n\"salary\":6000.0,\n\"dept_id\":9210,\n\"mng_id\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - ERROR 2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"emp_id\":848,\n\"emp_name\":\"Frenchies\",\n\"emp_no\":\"rituserid-e1b\",\n\"hire_date\":\"2018-06-15\",\n\"job\":\"programmers\",\n\"salary\":6000.0,\n\"dept_id\":921,\n\"mng_id\":12313\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - ERROR 3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"emp_id\":848,\n\"emp_name\":\"Frenchies\",\n\"emp_no\":\"rituserid-e1b\",\n\"hire_date\":\"2020-06-15\",\n\"job\":\"programmers\",\n\"salary\":6000.0,\n\"dept_id\":921,\n\"mng_id\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - ERROR 4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"emp_id\":848,\n\"emp_name\":\"Frenchies\",\n\"emp_no\":\"rituserid-e1b\",\n\"hire_date\":\"2019-11-24\",\n\"job\":\"programmers\",\n\"salary\":6000.0,\n\"dept_id\":921,\n\"mng_id\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - ERROR 5",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"emp_id\":848,\n\"emp_name\":\"Frenchies\",\n\"emp_no\":\"zxp6097-e3\",\n\"hire_date\":\"2018-06-15\",\n\"job\":\"programmers\",\n\"salary\":6000.0,\n\"dept_id\":921,\n\"mng_id\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Employee - ERROR 6",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"emp_id\":93232,\n\"emp_name\":\"Frenchies\",\n\"emp_no\":\"rituserid-e1b\",\n\"hire_date\":\"2018-06-15\",\n\"job\":\"programmers\",\n\"salary\":6000.0,\n\"dept_id\":921,\n\"mng_id\":0\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Employee - SUCCESS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee?emp_id=1108",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "1108"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Employee - ERROR 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/employee?emp_id=1231313",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"employee"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "1231313"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecard - SUCCESS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard?timecard_id=621",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					],
+					"query": [
+						{
+							"key": "timecard_id",
+							"value": "621"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecard - ERROR 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard?timecard_id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					],
+					"query": [
+						{
+							"key": "timecard_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecard - ERROR 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard?timecard_id=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					],
+					"query": [
+						{
+							"key": "timecard_id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecards - SUCCESS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecards?emp_id=1120",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecards"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "1120"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecards - ERROR 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecards?emp_id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecards"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecards - ERROR 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecards?emp_id=483323",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecards"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "483323"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Timecards - ERROR 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecards?emp_id=853",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecards"
+					],
+					"query": [
+						{
+							"key": "emp_id",
+							"value": "853"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - SUCCESS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "1117",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-11-28 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-11-28 07:31:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - ERROR 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-10-22 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-10-22 15:30:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - ERROR 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "852",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-10-22 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-10-22 15:30:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - ERROR 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "487",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-11-25 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-11-25 07:29:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - ERROR 4",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "487",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-11-24 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-11-24 15:30:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - ERROR 5",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "487",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-11-26 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-11-26 18:30:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Timecard - ERROR 6",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "emp_id",
+							"value": "487",
+							"type": "text"
+						},
+						{
+							"key": "start_time",
+							"value": "2019-11-26 06:30:00",
+							"type": "text"
+						},
+						{
+							"key": "end_time",
+							"value": "2019-11-26 15:30:00",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - SUCCESS",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 571,\n\t\"start_time\": \"2019-11-29 14:30:00\",\n\t\"end_time\": \"2019-11-29 17:35:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - ERROR 1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 2,\n\t\"start_time\": \"2019-10-22 08:30:00\",\n\t\"end_time\": \"2019-10-22 12:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - ERROR 2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 570,\n\t\"start_time\": \"2019-10-22 08:30:00\",\n\t\"end_time\": \"2019-10-22 12:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - ERROR 3",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 570,\n\t\"start_time\": \"2019-11-25 08:30:00\",\n\t\"end_time\": \"2019-11-25 09:29:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - ERROR 4",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 570,\n\t\"start_time\": \"2019-11-24 08:30:00\",\n\t\"end_time\": \"2019-11-24 12:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - ERROR 5",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 570,\n\t\"start_time\": \"2019-11-29 08:30:00\",\n\t\"end_time\": \"2019-11-29 17:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Timecard - ERROR 6",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"timecard_id\": 570,\n\t\"start_time\": \"2019-11-29 08:30:00\",\n\t\"end_time\": \"2019-11-29 19:30:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Timecard - SUCCESS",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard?timecard_id=569",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					],
+					"query": [
+						{
+							"key": "timecard_id",
+							"value": "569"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Timecard - ERROR 1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard?timecard_id=567",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					],
+					"query": [
+						{
+							"key": "timecard_id",
+							"value": "567"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Timecard - ERROR 2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/PandzaZP3/CompanyServices/timecard?timecard_id=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"PandzaZP3",
+						"CompanyServices",
+						"timecard"
+					],
+					"query": [
+						{
+							"key": "timecard_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BLANK URL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
