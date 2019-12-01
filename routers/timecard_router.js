@@ -25,7 +25,8 @@ routes.put('/', (req, res) => {
 });
 
 routes.delete('/', (req, res) => {
-  res.status(200).json({ message: controller.getMessage() });
+  let result = controller.deleteTimecard(req.query.timecard_id);
+  res.status(200).json({ message: result });
 });
 
 

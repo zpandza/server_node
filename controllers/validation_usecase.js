@@ -4,6 +4,15 @@ const validation = new Validation();
 const COMPANY_NAME = "zxp6097";
 
 class Cases {
+
+    validateDeleteCompany = (company) => {
+        if (!validation.isEmpty(company)) {
+            return null;
+        } else {
+            return `{ "Error":"Please provide name of company" }`;
+        }
+    }
+
     validateGetDepartment = (company, dept_id) => {
         if (!validation.isEmpty(company) && !validation.isEmpty(dept_id)) {
             return null;
@@ -132,6 +141,7 @@ class Cases {
         }
     };
 
+
     validateGetTimecard = timecard_id => {
         if (!validation.isEmpty(timecard_id)) {
             return null;
@@ -242,6 +252,18 @@ class Cases {
             return `{ "Error":"Timecard with provided timecard_id doesn't exist" }`;
         }
     };
+
+    validateDeleteTimecard = (timecard_id) => {
+        if(!validation.isEmpty(timecard_id)){
+            if(validation.timecardExists(timecard_id)){
+                return null;
+            } else {
+                return `{ "Error":"Timecard with provided timecard_id doesn't exist" }`;
+            }
+        } else {
+            return `{ "Error":"You need to provide timecard_id" }`;
+        }
+    }
 }
 
 module.exports = Cases;

@@ -6,6 +6,8 @@ const Timecard = companydata.Timecard;
 const Cases = require("./validation_usecase");
 const validation = new Cases();
 
+const Utilities = require('./utils');
+const utils = new Utilities();
 class Controller {
     constructor() {}
 
@@ -13,6 +15,19 @@ class Controller {
     getMessage = () => {
         return "message";
     };
+
+    //DELETE COMPANY
+    deleteCompany = company => {
+        let output = validation.validateDeleteCompany(company);
+        if(output == null){
+            utils.companyDeleted(company, this.deleteDepartment);
+            let companyDeleted = companydata.deleteCompany(company)
+            return JSON.parse(`{"Success":"${company} company deleted!"}`);
+        }
+
+        return JSON.parse(output)
+    }
+
 
     //UPDATE DEPARTMENT
     updateDepartment = department => {
@@ -45,13 +60,9 @@ class Controller {
     deleteDepartment = (companyname, id) => {
         let output = validation.validateDeleteDepartment(companyname, id);
         if (output == null) {
-            numRows = companydata.deleteDepartment(companyname, id);
-            if (numRows > 0) {
-                return JSON.parse(`{"Success":"${numRows} rows deleted!"}`);
-            }
-            return JSON.parse(
-                `{"Error":"Department you searched for doesn't exist!"}`
-            );
+            utils.departmentDeleted(companyname, id, this.deleteEmployee);
+            let numRows = companydata.deleteDepartment(companyname, id);
+            return JSON.parse(`{"Success":"${numRows} rows deleted!"}`);
         }
         return JSON.parse(output);
     };
@@ -147,6 +158,8 @@ class Controller {
     deleteEmployee = emp_id => {
         let output = validation.validateDeleteEmployee(emp_id);
         if (output == null) {
+            utils.managerDeleted(emp_id);
+            utils.deleteTimecards(emp_id);
             let updatedEmp = companydata.deleteEmployee(emp_id);
             return updatedEmp;
         }
@@ -199,6 +212,15 @@ class Controller {
         }
         return JSON.parse(output);
 
+    }
+
+    deleteTimecard = (timecard_id) => {
+        let output = validation.validateDeleteTimecard(timecard_id);
+        if(output == null){
+            let deletedTimecard = companydata.deleteTimecard(timecard_id);
+            return deletedTimecard;
+        }
+        return JSON.parse(output);
     }
 }
 
