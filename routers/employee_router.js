@@ -4,7 +4,7 @@ const Controller = require("../controllers/controller");
 const controller = new Controller();
 
 //GET EMPLOYEE
-routes.get('/', (req, res) => {
+routes.get('/employee', (req, res) => {
   let result = controller.getEmployee(req.query.emp_id);
   res.status(200).json(result);
 });
@@ -16,27 +16,21 @@ routes.get('/employees', (req, res) => {
 });
 
 //POST EMPLOYEE
-routes.post('/', (req, res) => {
+routes.post('/employee', (req, res) => {
   let result = controller.createEmployee(req.body);
-  res.status(200).json({
-    message: result
-  })
+  res.status(200).json(result)
 });
 
 //PUT EMPLOYEE
-routes.put('/', (req, res) => {
+routes.put('/employee', (req, res) => {
   let result = controller.updateEmployee(req.body)
-  res.status(200).json({
-    message: result
-  })
+  res.status(200).json(result)
 });
 
 //DELETE EMPLOYEE
-routes.delete('/', (req, res) => {
+routes.delete('/employee', (req, res) => {
   let result = controller.deleteEmployee(req.query.emp_id)
-  res.status(200).json({
-    message: result
-  })
+  res.status(200).json(result)
 })
 
 module.exports = routes;

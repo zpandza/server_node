@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //ROUTERS
 app.use("/PandzaZP3/CompanyServices/company", companyRouter);
-app.use("/PandzaZP3/CompanyServices/department", departmentRouter);
-app.use("/PandzaZP3/CompanyServices/employee", employeeRouter);
-app.use("/PandzaZP3/CompanyServices/timecard", timecardRouter);
+app.use("/PandzaZP3/CompanyServices/", departmentRouter);
+app.use("/PandzaZP3/CompanyServices/", employeeRouter);
+app.use("/PandzaZP3/CompanyServices/", timecardRouter);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

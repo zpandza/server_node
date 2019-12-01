@@ -11,18 +11,13 @@ const utils = new Utilities();
 class Controller {
     constructor() {}
 
-    //TEST
-    getMessage = () => {
-        return "message";
-    };
-
     //DELETE COMPANY
     deleteCompany = company => {
         let output = validation.validateDeleteCompany(company);
         if(output == null){
             utils.companyDeleted(company, this.deleteDepartment);
             let companyDeleted = companydata.deleteCompany(company)
-            return JSON.parse(`{"Success":"${company} company deleted!"}`);
+            return JSON.parse(`{"Success":"${company}'s information deleted!"}`);
         }
 
         return JSON.parse(output)
@@ -62,7 +57,7 @@ class Controller {
         if (output == null) {
             utils.departmentDeleted(companyname, id, this.deleteEmployee);
             let numRows = companydata.deleteDepartment(companyname, id);
-            return JSON.parse(`{"Success":"${numRows} rows deleted!"}`);
+            return JSON.parse(`{"Success":"Department ${id} from company ${companyname} is deleted."}`);
         }
         return JSON.parse(output);
     };
@@ -161,7 +156,7 @@ class Controller {
             utils.managerDeleted(emp_id);
             utils.deleteTimecards(emp_id);
             let updatedEmp = companydata.deleteEmployee(emp_id);
-            return updatedEmp;
+            return JSON.parse(`{ "Success": "Employee ${emp_id} is deleted!" }`);
         }
         return JSON.parse(output);
     };
@@ -218,7 +213,7 @@ class Controller {
         let output = validation.validateDeleteTimecard(timecard_id);
         if(output == null){
             let deletedTimecard = companydata.deleteTimecard(timecard_id);
-            return deletedTimecard;
+            return JSON.parse(`{ "Success":"Timecard ${timecard_id} deleted." }`);
         }
         return JSON.parse(output);
     }

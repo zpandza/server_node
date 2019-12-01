@@ -5,40 +5,36 @@ const Controller = require("../controllers/controller");
 const controller = new Controller();
 
 //GET SINGLE DEPARTMENT
-routes.get("/", (req, res) => {
+routes.get("/department", (req, res) => {
     let result = controller.getDepartment(req.query.company, req.query.dept_id);
-    res.status(200).json({ message: result });
+    res.status(200).json(result);
 });
 
 //GET ALL DEPARTMENTS
 routes.get("/departments", (req, res) => {
     let result = controller.getDepartments(req.query.company);
-    res.status(200).json({ message: result });
+    res.status(200).json(result);
 });
 
 //POST DEPARTMENT
-routes.post("/", (req, res) => {
+routes.post("/department", (req, res) => {
     let result = controller.createDepartment(req.body);
-    console.log(result);
     res.status(200).json(result);
 });
 
 //PUT DEPARTMENT
-routes.put("/", (req, res) => {
+routes.put("/department", (req, res) => {
     let result = controller.updateDepartment(req.body);
-    console.log(result);
-    res.status(200).json({ message: result });
+    res.status(200).json(result);
 });
 
 //DELETE DEPARTMENT
-routes.delete("/", (req, res) => {
-    let num_rows = controller.deleteDepartment(
+routes.delete("/department", (req, res) => {
+    let result = controller.deleteDepartment(
         req.query.company,
         req.query.dept_id
     );
-    res.status(200).json({
-        message: num_rows
-    });
+    res.status(200).json(result);
 });
 
 module.exports = routes;

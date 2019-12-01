@@ -6,7 +6,7 @@ const controller = new Controller();
 
 routes.delete('/', (req, res) => {
   let result = controller.deleteCompany(req.query.company);
-  res.status(200).json({ message: result });
+  res.status(200).json(result);
 });
 
 module.exports = routes;
